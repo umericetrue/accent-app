@@ -1,2 +1,33 @@
-<h1>hello world</h1>
-<p>hello world</p>
+<div class="main-contents">
+  <div class="search-contents">
+    <h1 class="accent-search">〜アクセント検索〜</h1>
+    <form class="search-form">
+      <input type="text" placeholder="調べたい単語を入力" class="word_form" autofocus>
+      <button class="search-botton">
+        <%= image_tag "search.png", class: "search-icon" %>
+      </button>
+    </form>
+  </div>
+
+  <div class="app-intro">
+    <p class='service-explain'>
+      アプリで簡単検索
+    </p>
+    <p class='service-explain'>
+      単語登録もできる！
+    </p>
+    <p class='service-title'>
+      Accent辞典
+    </p>
+    <div class='store-btn'>
+      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
+      <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+    </div>
+  </div>
+
+  <div class="hot-word">
+    <ul class="word-lists">
+      <li class="word-list"></li>
+    </ul>
+  </div>
+</div>
