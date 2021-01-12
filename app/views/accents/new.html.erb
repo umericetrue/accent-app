@@ -1,0 +1,74 @@
+<div class="subscribe-contents">
+  <header class="subscribe-header">
+    <%= link_to 'Accent辞典', "/", class: "subscribe-header-text" %>
+  </header>
+  
+  <div class="subscribe-main">
+    <h2 class="subscribe-title">単語の情報を入力</h2>
+    <%= form_with local: true do |f| %>
+
+      <%#= render 'shared/error_messages', model: f.object %>
+
+      <%# 単語 %>
+      <div class="word-name">
+        <div class="weight-bold-text">
+          単語
+          <span class="indispensable">*</span>
+        </div>
+          <%= f.text_area :hoge, class:"word-text", id:"word-id", placeholder:"単語（20文字以内）", maxlength:"20" %>
+        <div class="weight-bold-text">
+          単語(フリガナ)
+          <span class="indispensable">*</span>
+        </div>
+          <%= f.text_area :hoge, class:"word-text", id:"word-kana-id", placeholder:"単語のふりがな（40文字以内）", maxlength:"40" %>
+      </div>
+      <%# /単語 %>
+    
+      <%# 単語の品詞 %>
+      <div class="word-details">
+        <div class="weight-bold-text">
+          単語の品詞
+          <span class="indispensable">*</span>
+        </div>
+        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"speech-select-id"}) %>
+      </div>
+      <%# /単語の品詞 %>
+
+      <%# アクセントの型 %>
+      <div class="word-details">
+        <div class="weight-bold-text">
+          アクセントの型
+          <span class="indispensable">*</span>
+        </div>
+        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+      <%# /アクセントの型 %>
+
+      <%# アクセントの高さの切れ目 %>
+      <div class="word-details">
+        <div class="weight-bold-text">
+          高さの切れ目の拍(中高型の場合)
+        </div>
+        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+      <%# /アクセントの高さの切れ目 %>
+
+      <%# 情報源 %>
+      <div class="word-info">
+        <div class="weight-bold-text">
+          情報源
+          <span class="indispensable">*</span>
+        </div>
+          <%= f.text_area :hoge, class:"word-text", id:"info-id", placeholder:"テレビ番組や使用者の年代、地域など（40文字以内）", maxlength:"40" %>
+      </div>
+      <%# /情報源 %>
+
+      <%# 下部ボタン %>
+      <div class="subscribe-btn-contents">
+        <%= f.submit "登録する" ,class:"word-subscribe-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    <% end %>
+  </div>
+</div>
