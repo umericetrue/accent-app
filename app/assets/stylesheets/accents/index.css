@@ -1,3 +1,116 @@
+a {
+  text-decoration: none;
+}
+
+.main-contents {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.search-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.accent-search {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  color: #4689FF
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+
+.word-form {
+  display: block;
+  height: 50px;
+  width: 35vw;
+  padding: 5px;
+}
+
+.search-button {
+  height: 50px;
+  width: 50px;
+  border: 0;
+  cursor: pointer;
+  background-color: #3ccace;
+  padding: 8px;
+}
+
+.search-icon {
+  width: 100%;
+}
+
+.app-intro {
+  width: 100%;
+  background-image: url('../accent-intro.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-intro-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-explain {
+  color: #77FFFF;
+  font-size: 5vw;
+  margin: 10px 0 20px 20px;
+  text-shadow: #AAAAAA 1px 0 10px;
+}
+
+.app-intro-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-title {
+  color: #4689FF;
+  font-size: 8vw;
+  margin: auto 20px;
+}
+
+.google-btn {
+  width: 130px;
+  height: 40px;
+}
+
+.bottom-contents {
+  background-color: #CCFFCC;
+  height: 50vh;
+  padding: 20px 30vw;
+}
+
+.hot-word {
+  padding: 10px;
+}
+
+.hot-word h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.word-list {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
 @media (max-width: 599px) {
   
 }

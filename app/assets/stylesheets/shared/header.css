@@ -1,0 +1,20 @@
+.header {
+  background-color: #CCFFFF;
+  padding: 10px 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  color: #2C7CFF;
+}
+
+.header-lists {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-list {
+  margin: 0 10px;
+}

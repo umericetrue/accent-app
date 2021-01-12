@@ -1,33 +1,47 @@
+<%= render "shared/header" %>
+
 <div class="main-contents">
   <div class="search-contents">
-    <h1 class="accent-search">〜アクセント検索〜</h1>
+    <h1 class="accent-search">アクセント検索</h1>
     <form class="search-form">
-      <input type="text" placeholder="調べたい単語を入力" class="word_form" autofocus>
-      <button class="search-botton">
+      <input type="text" placeholder="調べたい単語を入力" class="word-form" autofocus>
+      <button class="search-button">
         <%= image_tag "search.png", class: "search-icon" %>
       </button>
     </form>
   </div>
 
   <div class="app-intro">
-    <p class='service-explain'>
-      アプリで簡単検索
-    </p>
-    <p class='service-explain'>
-      単語登録もできる！
-    </p>
-    <p class='service-title'>
-      Accent辞典
-    </p>
-    <div class='store-btn'>
-      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
-      <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+    <div class="app-intro-left">
+      <p class='service-explain'>
+        アプリで簡単検索
+      </p>
+      <p class='service-explain'>
+        単語登録もできる！
+      </p>
+    </div>
+    <div class="app-intro-right">
+      <p class='service-title'>
+        Accent辞典
+      </p>
+      <div class='store-btn'>
+        <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
+        <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+      </div>
     </div>
   </div>
-
-  <div class="hot-word">
-    <ul class="word-lists">
-      <li class="word-list"></li>
-    </ul>
+  
+  <div class="bottom-contents">
+    <div class="hot-word">
+      <h1>新規登録ワード</h1>
+      <ul class="word-lists">
+        <li class="word-list">アーカイブ</li>
+      </ul>
+    </div>
   </div>
+  
+    <%= link_to(root_path, class: 'subscribe-btn') do %>
+      <span class='subscribe-btn-text'>単語登録する</span>
+    <!-- <%= image_tag 'icon_subscribe.png' , size: '120x120' ,class: "subscribe-btn-icon" %>-->
+    <% end %>
 </div>
