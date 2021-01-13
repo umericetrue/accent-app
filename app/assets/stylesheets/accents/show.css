@@ -1,0 +1,132 @@
+.show-contents {
+  background-color: #CCFFFF;
+  padding: 30px 20vw;
+}
+
+.show-main-contents {
+  background-color: #EEEEEE;
+  padding: 3vh 5vw;
+}
+
+.word {
+  background-color: white;
+  padding: 2vw;
+}
+
+.show-word-pattern {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.show-accent-word {
+  text-align: center;
+  margin: 20px;
+  font-size: 4vw;
+}
+
+.edit-btn {
+  border: 1px solid red;
+  padding: 0 1vw;
+  border-radius: 10px;
+  background-color: white;
+  color: red;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+.show-word {
+  text-align: center;
+  font-size: 3vw;
+}
+
+.show-accent {
+  padding: 2vw 0;
+}
+
+.show-accent-title {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.accent-pattern {
+  text-align: center;
+  font-size: 3vw;
+  padding-top: 1vw;
+}
+
+.show-info {
+  padding-top: 2vw;
+  padding-bottom: 3vw;
+}
+
+.show-info-title {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.info {
+  font-size: 2vw;
+  padding-top: 1vw;
+}
+
+.use-example-pattern {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.pattern-lists {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.pattern-list {
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 20px;
+  padding: 1vw 2vw;
+  margin: 2vw;
+  font-size: 2vw;
+  color: red;
+  cursor: pointer;
+}
+
+.show-comments {
+  background-color: white;
+  padding: 10px;
+}
+
+.comment-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2vw;
+  margin-bottom: 10px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-text {
+  border: 1px solid #AAAAAA;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.comment-btn {
+  
+}
+
+.comments {
+  list-style: none;
+}
+
+.comment {
+  margin: 10px 0;
+}
