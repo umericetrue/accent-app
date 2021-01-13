@@ -1,0 +1,66 @@
+<%= render "shared/header" %>
+
+<div class="show-contents">
+  
+  <div class="show-main-contents">
+    <div class="word">
+      <div class="show-word-pattern">
+        品詞
+      </div>
+      <div class="show-accent-word">
+        ア＼クセント
+        <button class="edit-btn">編集</button>
+        <!--<span class="report-btn">通報</span>-->
+      </div>
+      <div class="show-word">
+        （アクセント）
+      </div>
+    </div>
+  
+    <div class="show-accent">
+      <div class="show-accent-title">
+        アクセントの型
+      </div>
+      <div class="accent-pattern">
+        頭高型
+      </div>
+    </div>
+
+    <div class="show-info">
+      <div class="show-info-title">
+        情報源
+      </div>
+      <div class="info">
+      あああああああああああ
+      </div>
+    </div>
+
+    <div class="use-examle"><%# ←このクラス必要ない？ %>
+      <div class="use-example-pattern">
+        他の使用例
+      </div>
+      <ul class="pattern-lists">
+        <li class="pattern-list">頭高型 0</li>
+        <li class="pattern-list">中高型 0</li>
+        <li class="pattern-list">尾高型 0</li>
+        <li class="pattern-list">平板型 0</li>
+      </ul>
+    </div>
+  
+  </div>
+  
+  <div class="show-comments">
+    <div class="comment-title">
+      コメント
+    </div>
+    <form class="comment-form">
+      <textarea class="comment-text", maxlength="200" ></textarea>
+      <button type="submit" class="comment-btn">
+        <span>コメントする<span>
+      </button>
+    </form>
+    <ul class="comments">
+      <li class="comment">投稿者：１コメ</li>
+    </ul>
+  </div>
+</div>
