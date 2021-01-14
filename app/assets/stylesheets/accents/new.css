@@ -49,8 +49,9 @@
 
 .select-box {
   width: 15vw;
-  height: 20px;
+  height: 2vw;
   margin-top: 5vw;
+  font-size: 1.5vw;
 }
 
 .subscribe-btn-contents {
@@ -61,12 +62,12 @@
 }
 
 .word-subscribe-btn {
-  background-color: #FF99FF;
+  background-color: #CCFFFF;
   border-radius: 10px;
   width: 30vw;
   height: 60px; 
-  color: white;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .back-btn {
@@ -76,4 +77,5 @@
   background-color: gray;
   color: white;
   border-radius: 10px;
+  cursor: pointer;
 }
