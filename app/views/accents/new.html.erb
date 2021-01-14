@@ -15,12 +15,12 @@
           単語
           <span class="indispensable">*</span>
         </div>
-          <%= f.text_area :hoge, class:"word-text", id:"word-id", placeholder:"単語（20文字以内）", maxlength:"20" %>
+          <%= f.text_area :word, class:"word-text", id:"word-id", placeholder:"単語（20文字以内）", maxlength:"20" %>
         <div class="weight-bold-text">
           単語(フリガナ)
           <span class="indispensable">*</span>
         </div>
-          <%= f.text_area :hoge, class:"word-text", id:"word-kana-id", placeholder:"単語のフリガナ（20文字以内）", maxlength:"20" %>
+          <%= f.text_area :word_kana, class:"word-text", id:"word-kana-id", placeholder:"単語のフリガナ（20文字以内）", maxlength:"20" %>
       </div>
       <%# /単語 %>
     
@@ -30,7 +30,7 @@
           単語の品詞
           <span class="indispensable">*</span>
         </div>
-        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"speech-select-id"}) %>
+        <%= f.collection_select(:part_of_speech_id, PartOfSpeech.all, :id, :name, {}, {class:"select-box", id:"speech-select-id"}) %>
       </div>
       <%# /単語の品詞 %>
 
@@ -40,7 +40,7 @@
           アクセントの型
           <span class="indispensable">*</span>
         </div>
-        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:accent_pattern_id, AccentPattern.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       </div>
       <%# /アクセントの型 %>
 
@@ -49,7 +49,7 @@
         <div class="weight-bold-text">
           高さの切れ目の拍(中高型の場合)
         </div>
-        <%= f.collection_select(:hoge, [], :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:beat_count_id, BeatCount.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       </div>
       <%# /アクセントの高さの切れ目 %>
 
@@ -59,7 +59,7 @@
           情報源
           <span class="indispensable">*</span>
         </div>
-          <%= f.text_area :hoge, class:"word-text", id:"info-id", placeholder:"テレビ番組や使用者の年代、地域など（100文字以内）", maxlength:"400" %>
+          <%= f.text_area :info, class:"word-text", id:"info-id", placeholder:"テレビ番組や使用者の年代、地域など（400文字以内）", maxlength:"400" %>
       </div>
       <%# /情報源 %>
 
