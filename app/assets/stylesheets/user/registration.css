@@ -5,7 +5,7 @@
 
 .accent-title-registration {
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto;  /*リンク範囲を文字上のみにするため*/
   color: #9057FF;
   font-size: 4vw;
   font-weight: bold;
