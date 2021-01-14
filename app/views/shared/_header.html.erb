@@ -2,10 +2,10 @@
   <%= link_to "Accent辞典", root_path, class: "header-title" %>
   <ul class="header-lists">
     <li class="header-list">
-      <%= link_to "ログイン", new_user_registration_path, class: "login"%>
+      <%= link_to "ログイン", new_user_session_path, class: "header-link"%>
     </li>
     <li class="header-list">
-      新規登録
+      <%= link_to "新規登録", new_user_registration_path, class: "header-link" %>
     </li>
   <!-- ログイン時で表示を変える
     <li class="header-list">

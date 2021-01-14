@@ -1,50 +1,35 @@
-.sign-up {
+.log-in {
   background-color: #CCFFFF;
-  padding: 7vh 30vw;
+  padding: 0 25vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.accent-title-registration {
+.accent-title-session {
   text-align: center;
   color: #9057FF;
   font-size: 4vw;
   font-weight: bold;
   display: block;
+  margin-bottom: 9vw;
 }
 
-.registration-form {
+.log-in-form {
   background-color: #DDDDDD;
   margin-top: 1vw;
   padding: 1vw 2vw;
 }
 
-.sign-up-title {
+.log-in-title {
   text-align: center;
   font-size: 3vw;
   font-weight: bold;
 }
+/* .field .field-label .field-input .actionsはregistration.cssに記載 */
 
-.field {
-  margin: 2vw 0;
-}
-
-.field-label {
-  font-weight: bold;
-  font-size: 1.8vw;
-}
-
-.field-input {
-  margin-top: 1vw;
-  padding: 5px;
-  width: 100%;
-  font-size: 1.8vw;
-}
-
-.actions {
-  display: flex;
-  justify-content: center;
-}
-
-.registration-btn {
+.session-btn {
   margin: 1vw;
   background-color: #D9E5FF;
   width: 10vw;
