@@ -5,9 +5,9 @@
   
   <div class="subscribe-main">
     <h2 class="subscribe-title">単語の情報を入力</h2>
-    <%= form_with local: true do |f| %>
+    <%= form_with model: @accent, url: accents_path, local: true do |f| %>
 
-      <%#= render 'shared/error_messages', model: f.object %>
+      <%= render 'shared/error_messages', model: f.object %>
 
       <%# 単語 %>
       <div class="word-name">
