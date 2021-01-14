@@ -35,7 +35,9 @@
     <div class="hot-word">
       <h1>新規登録ワード</h1>
       <ul class="word-lists">
-        <li class="word-list">アーカイブ</li>
+        <% @accents.each do |accent| %>
+          <li class="word-list"><%= link_to "#{accent.word}", accent_path(accent) %></li>
+        <% end %>
       </ul>
     </div>
   </div>

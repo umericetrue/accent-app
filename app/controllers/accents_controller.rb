@@ -1,5 +1,6 @@
 class AccentsController < ApplicationController
   def index
+    @accents = Accent.includes(:user).order("created_at DESC")
   end
 
   def new

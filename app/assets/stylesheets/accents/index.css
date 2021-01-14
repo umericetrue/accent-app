@@ -19,7 +19,7 @@ a {
   text-align: center;
   font-size: 30px;
   padding: 10px;
-  color: #4689FF
+  color: #4689FF;
 }
 
 .search-form {
@@ -107,7 +107,7 @@ a {
 
 .word-list {
   font-size: 20px;
-  margin-left: 20px;
+  margin-left: 10vw;
   margin-bottom: 5px;
 }
 
