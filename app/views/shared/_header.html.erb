@@ -1,8 +1,8 @@
 <div class="header">
-  <%= link_to "Accent辞典", root_path, class: "title" %>
+  <%= link_to "Accent辞典", root_path, class: "header-title" %>
   <ul class="header-lists">
     <li class="header-list">
-      ログイン
+      <%= link_to "ログイン", new_user_registration_path, class: "login"%>
     </li>
     <li class="header-list">
       新規登録

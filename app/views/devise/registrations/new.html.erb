@@ -1,0 +1,58 @@
+<div class="sign-up">
+  <%= link_to "Accent辞典", root_path, class: "accent-title"%>
+  
+  <div class="registration-form">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="sign-up-title">
+        ユーザー登録
+      </div>
+      <div class="field">
+        <div class="field-label">
+          <%= f.label :nickname %>
+          <span class="indispensable">*</span>
+        </div>
+        <div>
+          <%= f.email_field :nickname, class: "field-input", placeholder: "（例）Accent太郎", autofocus: true, autocomplete: "off" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          <%= f.label :email %>
+          <span class="indispensable">*</span>
+        </div>
+        <div>
+          <%= f.email_field :email, class: "field-input", placeholder: "（例）sample@examle", autocomplete: "off" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(半角<%= @minimum_password_length %> 文字以上)</em>
+          <% end %>
+          <span class="indispensable">*</span>
+        </div>
+        <div>
+          <%= f.password_field :password, class: "field-input", autocomplete: "off" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          <%= f.label :password_confirmation %>
+          <span class="indispensable">*</span>
+        </div>
+        <div>
+          <%= f.password_field :password_confirmation, class: "field-input", autocomplete: "off" %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "登録する", class: "registration-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

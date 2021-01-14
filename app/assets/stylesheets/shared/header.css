@@ -3,7 +3,7 @@
   padding: 10px 20px;
 }
 
-.title {
+.header-title {
   text-align: center;
   font-size: 30px;
   color: #2C7CFF;
@@ -18,4 +18,8 @@
 
 .header-list {
   margin: 0 10px;
+}
+
+.login {
+  display: block;
 }
