@@ -8,7 +8,7 @@
         <%= @accent.part_of_speech.name %>
       </div>
       <div class="show-accent-word">
-      <!-- 登録された情報によって下り目の位置を決める -->
+      <!-- 登録された情報によってアクセントの下り目の位置を決める -->
         <% if @accent.accent_pattern_id == 2 %>
           <%= @accent.word_kana.insert( 1, '＼') %>
         <% elsif @accent.accent_pattern_id == 3 %>
@@ -18,7 +18,7 @@
         <% elsif @accent.accent_pattern_id == 5 %>
           <%= @accent.word_kana.insert( @accent.word_kana.length, '￣')%>
         <% end %>
-      <!-- /登録された情報によって下り目の位置を決める -->
+      <!-- /登録された情報によってアクセントの下り目の位置を決める -->
         <button class="edit-btn">編集</button>
         <!--<span class="report-btn">通報</span>-->
       </div>

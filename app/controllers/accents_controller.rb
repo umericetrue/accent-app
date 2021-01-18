@@ -23,6 +23,10 @@ class AccentsController < ApplicationController
     @comments = @accent.comments.order("created_at DESC")
   end
 
+  def search
+    @accents = Accent.search(params[:keyword])
+  end
+
   private
   def accent_params
     params.require(:accent).permit(:word, :word_kana, :part_of_speech_id, :accent_pattern_id, :beat_count_id, :info).merge(user_id: current_user.id)

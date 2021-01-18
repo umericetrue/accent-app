@@ -21,4 +21,10 @@ class Accent < ApplicationRecord
       validates :accent_pattern_id
     end
   end
+
+  def self.search(search)
+    if search != ""
+      Accent.where('word LIKE(?)', "#{search}%")
+    end
+  end
 end
