@@ -123,9 +123,11 @@
   
 }
 
-strong {
+/* search.html.erbの「検索ワードは見つかりませんでした」の文字の装飾もこの部分 */
+strong>p {
   text-align: center;
 }
+/* /search.html.erbの「検索ワードは見つかりませんでした」の文字の装飾もこの部分 */
 
 .comments {
   list-style: none;
