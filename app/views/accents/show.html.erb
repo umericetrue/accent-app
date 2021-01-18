@@ -65,14 +65,20 @@
     <div class="comment-title">
       コメント
     </div>
-    <form class="comment-form">
-      <textarea class="comment-text", rows="3", maxlength="200" ></textarea>
-      <button type="submit" class="comment-btn">
-        <span>コメントする<span>
-      </button>
-    </form>
+    <% if user_signed_in? %>
+      <%= form_with model: [@accent, @comment], class: "comment-form", local: true do |f| %>
+        <%= f.text_area :comment, class: "comment-text", rows: "3", maxlength: "200" %>
+        <%= f.submit "コメントする", class: "comment-btn" %>
+      <% end %>
+    <% else %>
+      <strong><p>*** コメントの投稿には新規登録/ログインが必要です ***</p></strong>
+    <% end %>
     <ul class="comments">
-      <li class="comment">投稿者：１コメ</li>
+      <% @comments.each do |comment| %>
+        <li class="comment">
+          <%= comment.user.nickname %>：<%= comment.comment %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>

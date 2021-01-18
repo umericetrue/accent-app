@@ -19,6 +19,8 @@ class AccentsController < ApplicationController
 
   def show
     @accent = Accent.find(params[:id])
+    @comment = Comment.new
+    @comments = @accent.comments.order("created_at DESC")
   end
 
   private
