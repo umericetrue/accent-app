@@ -50,7 +50,9 @@
         他の使用例
       </div>
       <ul class="pattern-lists">
-        <li class="pattern-list">頭高型 0</li>
+        <li class="pattern-list", id="atamadaka-<%= @accent.id %>">
+          <%= render partial: "atamadakas/atamadaka", locals: { accent: @accent, atamadakas: @atamadakas } %>
+        </li>
         <li class="pattern-list">中高型 0</li>
         <li class="pattern-list">尾高型 0</li>
         <li class="pattern-list">平板型 0</li>
