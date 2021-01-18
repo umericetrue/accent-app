@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <% if Atamadaka.find_by(user_id: current_user.id, accent_id: accent.id) %>
-    <%= link_to accent_atamadaka_path(atamadaka, accent_id: accent.id), method: :delete, remote: true do %>
+    <%= link_to accent_atamadaka_path(accent_id: accent.id), method: :delete, remote: true do %>
       頭高型
       <span>
         <%= accent.atamadakas_count %>

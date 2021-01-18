@@ -123,6 +123,10 @@
   
 }
 
+strong {
+  text-align: center;
+}
+
 .comments {
   list-style: none;
 }
