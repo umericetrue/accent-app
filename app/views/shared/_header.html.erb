@@ -1,19 +1,20 @@
 <div class="header">
   <%= link_to "Accent辞典", root_path, class: "header-title" %>
   <ul class="header-lists">
-    <li class="header-list">
-      <%= link_to "ログイン", new_user_session_path, class: "header-link"%>
-    </li>
-    <li class="header-list">
-      <%= link_to "新規登録", new_user_registration_path, class: "header-link" %>
-    </li>
-  <!-- ログイン時で表示を変える
-    <li class="header-list">
-      ユーザーネーム
-    </li>
-    <li class="header-list">
-      ログアウト
-    </li>
-    -->
+    <% if user_signed_in? %>
+      <li class="header-list">
+        <%= current_user.nickname %>
+      </li>
+      <li class="header-list">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "header-link" %>
+      </li>
+    <% else %>
+      <li class="header-list">
+        <%= link_to "ログイン", new_user_session_path, class: "header-link"%>
+      </li>
+      <li class="header-list">
+        <%= link_to "新規登録", new_user_registration_path, class: "header-link" %>
+      </li>
+    <% end %>
   </ul>
 </div>
