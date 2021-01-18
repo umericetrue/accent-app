@@ -5,15 +5,25 @@
   <div class="show-main-contents">
     <div class="word">
       <div class="show-word-pattern">
-        品詞
+        <%= @accent.part_of_speech.name %>
       </div>
       <div class="show-accent-word">
-        ア＼クセント
+      <!-- 登録された情報によって下り目の位置を決める -->
+        <% if @accent.accent_pattern_id == 2 %>
+          <%= @accent.word_kana.insert( 1, '＼') %>
+        <% elsif @accent.accent_pattern_id == 3 %>
+          <%= @accent.word_kana.insert( @accent.beat_count_id, '＼') %>
+        <% elsif @accent.accent_pattern_id == 4 %>
+          <%= @accent.word_kana.insert( @accent.word_kana.length, '＼') %>
+        <% elsif @accent.accent_pattern_id == 5 %>
+          <%= @accent.word_kana.insert( @accent.word_kana.length, '￣')%>
+        <% end %>
+      <!-- /登録された情報によって下り目の位置を決める -->
         <button class="edit-btn">編集</button>
         <!--<span class="report-btn">通報</span>-->
       </div>
       <div class="show-word">
-        （アクセント）
+        （<%= @accent.word %>）
       </div>
     </div>
   
@@ -22,7 +32,7 @@
         アクセントの型
       </div>
       <div class="accent-pattern">
-        頭高型
+        <%= @accent.accent_pattern.name%>
       </div>
     </div>
 
@@ -31,7 +41,7 @@
         情報源
       </div>
       <div class="info">
-      あああああああああああ
+        <%= @accent.info %>
       </div>
     </div>
 
@@ -40,7 +50,9 @@
         他の使用例
       </div>
       <ul class="pattern-lists">
-        <li class="pattern-list">頭高型 0</li>
+        <li class="pattern-list", id="atamadaka-<%= @accent.id %>">
+          <%= render partial: "atamadakas/atamadaka", locals: { accent: @accent, atamadakas: @atamadakas } %>
+        </li>
         <li class="pattern-list">中高型 0</li>
         <li class="pattern-list">尾高型 0</li>
         <li class="pattern-list">平板型 0</li>
@@ -54,7 +66,7 @@
       コメント
     </div>
     <form class="comment-form">
-      <textarea class="comment-text", maxlength="200" ></textarea>
+      <textarea class="comment-text", rows="3", maxlength="200" ></textarea>
       <button type="submit" class="comment-btn">
         <span>コメントする<span>
       </button>

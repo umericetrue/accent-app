@@ -1,5 +1,6 @@
 class Accent < ApplicationRecord
   belongs_to :user
+  has_many :atamadakas, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :part_of_speech

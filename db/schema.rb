@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_14_080814) do
+ActiveRecord::Schema.define(version: 2021_01_16_151440) do
 
   create_table "accents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "word", null: false
@@ -20,9 +20,19 @@ ActiveRecord::Schema.define(version: 2021_01_14_080814) do
     t.integer "beat_count_id"
     t.text "info", null: false
     t.bigint "user_id"
+    t.integer "atamadakas_count", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_accents_on_user_id"
+  end
+
+  create_table "atamadakas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "accent_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["accent_id"], name: "index_atamadakas_on_accent_id"
+    t.index ["user_id"], name: "index_atamadakas_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -39,4 +49,6 @@ ActiveRecord::Schema.define(version: 2021_01_14_080814) do
   end
 
   add_foreign_key "accents", "users"
+  add_foreign_key "atamadakas", "accents"
+  add_foreign_key "atamadakas", "users"
 end

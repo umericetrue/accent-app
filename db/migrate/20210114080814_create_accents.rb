@@ -8,6 +8,7 @@ class CreateAccents < ActiveRecord::Migration[6.0]
       t.integer :beat_count_id
       t.text :info,                 null: false
       t.references :user,           foreign_key: true
+      t.integer :atamadakas_count, null: false, default: 0
       t.timestamps
     end
   end
