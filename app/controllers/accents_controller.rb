@@ -23,6 +23,20 @@ class AccentsController < ApplicationController
     @comments = @accent.comments.order("created_at DESC")
   end
 
+  def edit
+    @accent = Accent.find(params[:id])
+  end
+
+  def update
+    @accent = Accent.find(params[:id])
+    @accent.update(accent_params)
+    if @accent.valid?
+      redirect_to @accent
+    else
+      render action: :edit
+    end
+  end
+
   def search
     @accents = Accent.search(params[:keyword])
   end
