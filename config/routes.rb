@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   resources :accents do
     resources :comments, only: :create
     resources :atamadakas, only: [:create, :destroy]
+    
+    collection do
+      get 'search'
+    end
   end
 end
