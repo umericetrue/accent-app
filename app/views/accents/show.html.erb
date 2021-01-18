@@ -76,7 +76,8 @@
     <ul class="comments">
       <% @comments.each do |comment| %>
         <li class="comment">
-          <%= comment.user.nickname %>：<%= comment.comment %>
+          <%= comment.user.nickname %>(<%= l comment.created_at %>)
+          <p><%= comment.comment %></p>
         </li>
       <% end %>
     </ul>
