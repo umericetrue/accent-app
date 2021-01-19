@@ -12,11 +12,11 @@ class Accent < ApplicationRecord
     validates :info, length: { maximum: 400 } 
 
     with_options length: { maximum: 20 } do
-      validates :word
+      validates :word, uniqueness: { case_sensitive: false }
       validates :word_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: "は全角カタカナを入力してください" }
     end
 
-    with_options numericality: { other_than: 1, message: "を入力してください"} do
+    with_options numericality: { other_than: 1, message: "を選択してください"} do
       validates :part_of_speech_id
       validates :accent_pattern_id
     end
