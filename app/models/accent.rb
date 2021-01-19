@@ -13,10 +13,10 @@ class Accent < ApplicationRecord
 
     with_options length: { maximum: 20 } do
       validates :word
-      validates :word_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: "is invalid. Input full-width katakana characters." }
+      validates :word_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: "は全角カタカナを入力してください" }
     end
 
-    with_options numericality: { other_than: 1, message: "can't be blank"} do
+    with_options numericality: { other_than: 1, message: "を入力してください"} do
       validates :part_of_speech_id
       validates :accent_pattern_id
     end

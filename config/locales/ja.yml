@@ -2,3 +2,17 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+     accent:
+       info: 情報源
+       word: 単語
+       word_kana: 単語（フリガナ）
+       part_of_speech_id: 品詞
+       accent_pattern_id: アクセントの型
+       
+       
