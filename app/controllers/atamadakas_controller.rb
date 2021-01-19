@@ -9,6 +9,6 @@ class AtamadakasController < ApplicationController
     atamadaka = Atamadaka.find_by(user_id: current_user.id, accent_id: params[:accent_id])
     atamadaka.destroy
     @atamadakas = Atamadaka.where(accent_id: params[:accent_id])
-    @accent = Accent.find([:accent_id])
+    @accent = Accent.find(params[:accent_id])
   end
 end
