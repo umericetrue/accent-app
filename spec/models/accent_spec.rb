@@ -96,6 +96,11 @@ RSpec.describe Accent, type: :model do
         @accent.valid?
         expect(@accent.errors.full_messages).to include("情報源は400文字以内で入力してください")
       end
+      it 'userが紐づいていないと保存できないこと' do
+        @accent.user = nil
+        @accent.valid?
+        expect(@accent.errors.full_messages).to include("Userを入力してください")
+      end
     end
   end
 end
