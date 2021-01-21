@@ -19,7 +19,9 @@
           <%= @accent.word_kana.insert( @accent.word_kana.length, '￣')%>
         <% end %>
       <!-- /登録された情報によってアクセントの下り目の位置を決める -->
-        <%= link_to "編集", edit_accent_path(@accent), class: "edit-btn" %>
+        <% if user_signed_in? && current_user.id == @accent.user_id %>
+          <%= link_to "編集", edit_accent_path(@accent), class: "edit-btn" %>
+        <% end %>
         <!--<span class="report-btn">通報</span>-->
       </div>
       <div class="show-word">
