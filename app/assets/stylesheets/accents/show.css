@@ -32,6 +32,7 @@
   color: red;
   font-size: 2vw;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .show-word {

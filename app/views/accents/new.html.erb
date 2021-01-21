@@ -40,7 +40,7 @@
           アクセントの型
           <span class="indispensable">*</span>
         </div>
-        <%= f.collection_select(:accent_pattern_id, AccentPattern.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:accent_pattern_id, AccentPattern.all, :id, :name, {}, {class:"select-box", id:"accent-pattern-id"}) %>
       </div>
       <%# /アクセントの型 %>
 
@@ -49,7 +49,7 @@
         <div class="weight-bold-text">
           高さの切れ目の拍(中高型の場合)
         </div>
-        <%= f.collection_select(:beat_count_id, BeatCount.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:beat_count_id, BeatCount.all, :id, :name, {}, {class:"select-box", id:"beat-count-id"}) %>
       </div>
       <%# /アクセントの高さの切れ目 %>
 
