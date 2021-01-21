@@ -15,6 +15,11 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = '123456'
         expect(@user).to be_valid
       end
+      it 'パスワードは大文字でも登録できること' do
+        @user.password = 'ABCDEF'
+        @user.password_confirmation = 'ABCDEF'
+        expect(@user).to be_valid
+      end
     end
 
     context 'ユーザー登録できない時' do
