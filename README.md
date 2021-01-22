@@ -115,7 +115,7 @@ password: 0210
 ## 実装予定の機能
 - 非同期通信を利用した投票機能
 - マイページ
-- レスポンシブなデザイン
+- レスポンシブデザイン
 
 ## テーブル設計
 ### ER図
@@ -164,4 +164,12 @@ password: 0210
 - belongs_to :user
 - belongs_to :accent
 
-## 動作環境
+## 使用技術
+- ruby 2.6.5, rails 6.0.0
+- webpacker(css/scss/js/jQuery)
+- Rspec
+
+ローカル環境で動作確認される際は  
+bundle install  
+yarn add jquery  
+のコマンド入力をお願い致します。
