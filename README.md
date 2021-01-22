@@ -107,10 +107,19 @@ password: 0210
 
 ## 機能
 ### 検索機能
-![検索機能](https://gyazo.com/153e3f5ace3490746fa6ab4480575f23 "検索機能")
+![153e3f5ace3490746fa6ab4480575f23](https://user-images.githubusercontent.com/76139604/105475161-6d3cd680-5ce2-11eb-8b74-874e33a540f8.gif)
 
+### 登録機能
+![b7a7d53de2b7363e731ea539255f8526](https://user-images.githubusercontent.com/76139604/105476606-31a30c00-5ce4-11eb-92c3-5a38cc332d65.gif)
+
+## 実装予定の機能
+- 非同期通信を利用した投票機能
+- マイページ
+- レスポンシブなデザイン
 
 ## テーブル設計
+### ER図
+![accent](https://user-images.githubusercontent.com/76139604/105478711-dde5f200-5ce6-11eb-83e5-f0eec120cd26.png)
 
 ### users テーブル
 
@@ -154,3 +163,5 @@ password: 0210
 
 - belongs_to :user
 - belongs_to :accent
+
+## 動作環境
