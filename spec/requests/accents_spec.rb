@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "Accents", type: :request do
+RSpec.describe 'Accents', type: :request do
   before do
     @accent = FactoryBot.create(:accent)
   end
-  
-  describe "GET #index" do
+
+  describe 'GET #index' do
     it 'indexアクションにリクエストすると正常にレスポンスが返ってくる' do
       get root_path
       expect(response.status).to eq 200
@@ -18,11 +18,11 @@ RSpec.describe "Accents", type: :request do
 
     it 'indexアクションにリクエストするとレスポンスに検索フォームが存在する' do
       get root_path
-      expect(response.body).to include("調べたい単語を入力")
+      expect(response.body).to include('調べたい単語を入力')
     end
   end
-  
-  describe "GET #show" do
+
+  describe 'GET #show' do
     it 'showアクションにリクエストすると正常にレスポンスが返ってくる' do
       get accent_path(@accent)
       expect(response.status).to eq 200
@@ -35,14 +35,14 @@ RSpec.describe "Accents", type: :request do
 
     it 'showアクションにリクエストするとレスポンスに登録済みの単語（フリガナ）が存在する' do
       get accent_path(@accent)
-      expect(response.body).to include("テ＼スト")
+      expect(response.body).to include('テ＼スト')
     end
 
     it 'showアクションにリクエストするとレスポンスに登録済みの品詞が存在する' do
       get accent_path(@accent)
       expect(response.body).to include @accent.part_of_speech.name
     end
-  
+
     it 'showアクションにリクエストするとレスポンスに登録済みのアクセントの型が存在する' do
       get accent_path(@accent)
       expect(response.body).to include @accent.accent_pattern.name
@@ -55,7 +55,7 @@ RSpec.describe "Accents", type: :request do
 
     it 'showアクションにリクエストするとレスポンスにコメント一覧表示部分が存在する' do
       get accent_path(@accent)
-      expect(response.body).to include("コメント")
+      expect(response.body).to include('コメント')
     end
   end
 end

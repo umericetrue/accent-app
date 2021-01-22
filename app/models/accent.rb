@@ -9,22 +9,20 @@ class Accent < ApplicationRecord
   belongs_to :beat_count
 
   with_options presence: true do
-    validates :info, length: { maximum: 400 } 
+    validates :info, length: { maximum: 400 }
 
     with_options length: { maximum: 20 } do
       validates :word, uniqueness: { case_sensitive: false }
-      validates :word_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: "は全角カタカナを入力してください" }
+      validates :word_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: 'は全角カタカナを入力してください' }
     end
 
-    with_options numericality: { other_than: 1, message: "を選択してください"} do
+    with_options numericality: { other_than: 1, message: 'を選択してください' } do
       validates :part_of_speech_id
       validates :accent_pattern_id
     end
   end
 
   def self.search(search)
-    if search != ""
-      Accent.where('word LIKE(?)', "#{search}%")
-    end
+    Accent.where('word LIKE(?)', "#{search}%") if search != ''
   end
 end

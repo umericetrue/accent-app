@@ -4,7 +4,7 @@ class AccentsController < ApplicationController
   before_action :move_to_index, only: :edit
 
   def index
-    @accents = Accent.includes(:user).order("created_at DESC")
+    @accents = Accent.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -23,7 +23,7 @@ class AccentsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @accent.comments.order("created_at DESC")
+    @comments = @accent.comments.order('created_at DESC')
   end
 
   def edit
@@ -43,8 +43,10 @@ class AccentsController < ApplicationController
   end
 
   private
+
   def accent_params
-    params.require(:accent).permit(:word, :word_kana, :part_of_speech_id, :accent_pattern_id, :beat_count_id, :info).merge(user_id: current_user.id)
+    params.require(:accent).permit(:word, :word_kana, :part_of_speech_id, :accent_pattern_id, :beat_count_id,
+                                   :info).merge(user_id: current_user.id)
   end
 
   def set_accent
@@ -52,8 +54,6 @@ class AccentsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in? && current_user.id == @accent.user.id
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless user_signed_in? && current_user.id == @accent.user.id
   end
 end

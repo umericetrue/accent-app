@@ -11,7 +11,7 @@ RSpec.describe Comment, type: :model do
         expect(@comment).to be_valid
       end
       it 'commentが200文字以内なら投稿できる' do
-        @comment.comment = "あ" * 200
+        @comment.comment = 'あ' * 200
         expect(@comment).to be_valid
       end
     end
@@ -20,22 +20,22 @@ RSpec.describe Comment, type: :model do
       it 'commentが空だと投稿できない' do
         @comment.comment = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Commentを入力してください") 
+        expect(@comment.errors.full_messages).to include('Commentを入力してください')
       end
       it 'commentが201文字以上だと投稿できない' do
-        @comment.comment = "あ" * 201
+        @comment.comment = 'あ' * 201
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Commentは200文字以内で入力してください")
+        expect(@comment.errors.full_messages).to include('Commentは200文字以内で入力してください')
       end
       it 'userが紐づいていないと投稿できない' do
         @comment.user = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Userを入力してください")
+        expect(@comment.errors.full_messages).to include('Userを入力してください')
       end
       it 'accentが紐づいていないと投稿できない' do
         @comment.accent = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Accentを入力してください")
+        expect(@comment.errors.full_messages).to include('Accentを入力してください')
       end
     end
   end
