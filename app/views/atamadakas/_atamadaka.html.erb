@@ -1,13 +1,13 @@
 <% if user_signed_in? %>
   <% if Atamadaka.find_by(user_id: current_user.id, accent_id: accent.id) %>
-    <%= link_to accent_atamadaka_path(accent_id: accent.id), method: :delete, remote: true do %>
+    <%= link_to accent_atamadaka_path(accent.id, accent.atamadakas), method: :delete, remote: true do %>
       頭高型
       <span>
         <%= accent.atamadakas_count %>
       </span>
     <% end %>
   <% else %>
-    <%= link_to accent_atamadakas_path(accent_id: accent.id), method: :post, remote: true do %>
+    <%= link_to  accent_atamadakas_path(accent.id), method: :post, remote: true do %>
       頭高型
       <span>
         <%= accent.atamadakas_count %>
@@ -19,4 +19,4 @@
   <span>
     <%= accent.atamadakas_count %>
   </span>
-<%end%>
+<% end %>
