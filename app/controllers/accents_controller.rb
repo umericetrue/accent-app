@@ -4,7 +4,7 @@ class AccentsController < ApplicationController
   before_action :move_to_index, only: :edit
 
   def index
-    @accents = Accent.includes(:user).order('created_at DESC')
+    @accents = Accent.includes(:user).order("created_at DESC").limit(10)
   end
 
   def new
