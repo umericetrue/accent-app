@@ -9,5 +9,9 @@ class User < ApplicationRecord
 
   has_many :accents
   has_many :comments
-  has_many :atamadakas
+  has_many :atamadakas, dependent: :destroy
+
+  def already_atamadakas?(accent)
+    self.atamadakas.exists?(accent_id: accent.id)
+  end
 end

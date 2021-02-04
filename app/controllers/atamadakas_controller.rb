@@ -1,14 +1,13 @@
 class AtamadakasController < ApplicationController
   def create
-    @atamadaka = Atamadaka.create(user_id: current_user.id, accent_id: params[:accent_id])
-    @atamadakas = Atamadaka.where(accent_id: params[:accent_id])
-    @accent = Accent.find(params[:accent_id])
+    @atamadaka = current_user.atamadakas.create(accent_id: params[:accent_id])
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
-    atamadaka = Atamadaka.find_by(user_id: current_user.id, accent_id: params[:accent_id])
-    atamadaka.destroy
-    @atamadakas = Atamadaka.where(accent_id: params[:accent_id])
     @accent = Accent.find(params[:accent_id])
+    @atamadaka = current_user.atamadakas.find_by(accent_id: @accent.id)
+    @atamadaka.destroy
+    redirect_back(fallback_location: root_path)
   end
 end
