@@ -53,7 +53,14 @@
       </div>
       <ul class="pattern-lists">
         <li class="pattern-list", id="atamadaka-<%= @accent.id %>">
-          <%= render partial: "atamadakas/atamadaka", locals: { accent: @accent, atamadakas: @atamadakas } %>
+          <%# 非同期通信用のrender %>
+          <%#= render partial: "atamadakas/atamadaka", locals: { accent: @accent, atamadakas: @atamadakas } %>
+          <% if current_user.already_atamadakas?(@accent) %>
+            <%= link_to '頭高型', accent_atamadaka_path(@accent), method: :delete %>
+          <% else %>
+            <%= link_to '頭高型', accent_atamadakas_path(@accent), method: :post %>
+          <% end %>
+          <%= @accent.atamadakas.count %>
         </li>
         <li class="pattern-list">中高型 0</li>
         <li class="pattern-list">尾高型 0</li>
