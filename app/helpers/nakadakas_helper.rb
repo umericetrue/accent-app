@@ -1,0 +1,2 @@
+module NakadakasHelper
+end

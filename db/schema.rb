@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_034219) do
+ActiveRecord::Schema.define(version: 2021_02_12_063159) do
 
   create_table "accents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "word", null: false
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2021_01_18_034219) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "nakadakas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "accent_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["accent_id"], name: "index_nakadakas_on_accent_id"
+    t.index ["user_id"], name: "index_nakadakas_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -62,4 +71,6 @@ ActiveRecord::Schema.define(version: 2021_01_18_034219) do
   add_foreign_key "atamadakas", "users"
   add_foreign_key "comments", "accents"
   add_foreign_key "comments", "users"
+  add_foreign_key "nakadakas", "accents"
+  add_foreign_key "nakadakas", "users"
 end
