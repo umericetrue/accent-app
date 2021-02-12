@@ -56,7 +56,7 @@
           <%# 非同期通信用のrender %>
           <%#= render partial: "atamadakas/atamadaka", locals: { accent: @accent, atamadakas: @atamadakas } %>
           <% if user_signed_in? %>
-            <% if current_user.already_atamadakas?(@accent) %>
+            <% if current_user.already_atamadaka?(@accent) %>
               <%= link_to '頭高型', accent_atamadaka_path(@accent), method: :delete %>
             <% else %>
               <%= link_to '頭高型', accent_atamadakas_path(@accent), method: :post %>
@@ -66,7 +66,18 @@
             頭高型 <%= @accent.atamadakas.count%>
           <% end %>
         </li>
-        <li class="pattern-list">中高型 0</li>
+        <li class="pattern-list">
+          <% if user_signed_in? %>
+            <% if current_user.already_nakadaka?(@accent) %>
+              <%= link_to '中高型', accent_nakadaka_path(@accent), method: :delete %>
+            <% else %>
+              <%= link_to '中高型', accent_nakadakas_path(@accent), method: :post %>
+            <% end %>
+            <%= @accent.nakadakas.count %>
+          <% else %>
+            中高型 <%= @accent.nakadakas.count%>
+          <% end %>
+        </li>
         <li class="pattern-list">尾高型 0</li>
         <li class="pattern-list">平板型 0</li>
       </ul>
