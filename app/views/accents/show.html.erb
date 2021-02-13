@@ -78,7 +78,18 @@
             中高型 <%= @accent.nakadakas.count%>
           <% end %>
         </li>
-        <li class="pattern-list">尾高型 0</li>
+        <li class="pattern-list">
+          <% if user_signed_in? %>
+            <% if current_user.already_odaka?(@accent) %>
+              <%= link_to '尾高型', accent_odaka_path(@accent), method: :delete %>
+            <% else %>
+              <%= link_to '尾高型', accent_odakas_path(@accent), method: :post %>
+            <% end %>
+            <%= @accent.odakas.count %>
+          <% else %>
+            尾高型 <%= @accent.odakas.count%>
+          <% end %>
+        </li>
         <li class="pattern-list">平板型 0</li>
       </ul>
     </div>
