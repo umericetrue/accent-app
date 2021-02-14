@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :atamadakas, only: [:create, :destroy]
     resources :nakadakas, only: [:create, :destroy]
     resources :odakas, only: [:create, :destroy]
+    resources :heibans, only: [:create, :destroy]
 
     collection do
       get 'search'

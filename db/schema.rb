@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_13_131456) do
+ActiveRecord::Schema.define(version: 2021_02_14_042311) do
 
   create_table "accents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "word", null: false
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2021_02_13_131456) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["accent_id"], name: "index_comments_on_accent_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "heibans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "accent_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["accent_id"], name: "index_heibans_on_accent_id"
+    t.index ["user_id"], name: "index_heibans_on_user_id"
   end
 
   create_table "nakadakas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,6 +89,8 @@ ActiveRecord::Schema.define(version: 2021_02_13_131456) do
   add_foreign_key "atamadakas", "users"
   add_foreign_key "comments", "accents"
   add_foreign_key "comments", "users"
+  add_foreign_key "heibans", "accents"
+  add_foreign_key "heibans", "users"
   add_foreign_key "nakadakas", "accents"
   add_foreign_key "nakadakas", "users"
   add_foreign_key "odakas", "accents"

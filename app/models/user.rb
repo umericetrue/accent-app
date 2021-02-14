@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :atamadakas, dependent: :destroy
   has_many :nakadakas, dependent: :destroy
   has_many :odakas, dependent: :destroy
+  has_many :heibans, dependent: :destroy
 
   def already_atamadaka?(accent)
     self.atamadakas.exists?(accent_id: accent.id)
@@ -23,5 +24,9 @@ class User < ApplicationRecord
 
   def already_odaka?(accent)
     self.odakas.exists?(accent_id: accent.id)
+  end
+
+  def already_heiban?(accent)
+    self.heibans.exists?(accent_id: accent.id)
   end
 end

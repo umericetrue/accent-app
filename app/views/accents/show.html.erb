@@ -90,7 +90,18 @@
             尾高型 <%= @accent.odakas.count%>
           <% end %>
         </li>
-        <li class="pattern-list">平板型 0</li>
+        <li class="pattern-list">
+          <% if user_signed_in? %>
+            <% if current_user.already_heiban?(@accent) %>
+              <%= link_to '平板型', accent_heiban_path(@accent), method: :delete %>
+            <% else %>
+              <%= link_to '平板型', accent_heibans_path(@accent), method: :post %>
+            <% end %>
+            <%= @accent.heibans.count %>
+          <% else %>
+            平板型 <%= @accent.heibans.count%>
+          <% end %>
+        </li>
       </ul>
     </div>
   
