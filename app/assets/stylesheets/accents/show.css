@@ -35,6 +35,17 @@
   white-space: nowrap;
 }
 
+.delete-btn {
+  border: 1px solid blue;
+  padding: 0 1vw;
+  border-radius: 10px;
+  background-color: white;
+  color: blue;
+  font-size: 2vw;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 .show-word {
   text-align: center;
   font-size: 3vw;

@@ -1,6 +1,6 @@
 class AccentsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :set_accent, only: [:show, :edit, :update]
+  before_action :set_accent, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: :edit
 
   def index
@@ -35,6 +35,14 @@ class AccentsController < ApplicationController
       redirect_to @accent
     else
       render action: :edit
+    end
+  end
+
+  def destroy
+    if @accent.destroy
+      redirect_to action: :index
+    else
+      render action: :show
     end
   end
 
