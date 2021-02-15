@@ -1,7 +1,7 @@
 class AccentsController < ApplicationController
   before_action :authenticate_user!, only: :new
   before_action :set_accent, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index, only: :edit
+  before_action :move_to_index, only: [:edit, :delete]
 
   def index
     @accents = Accent.includes(:user).order("created_at DESC").limit(10)
@@ -62,6 +62,6 @@ class AccentsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in? && current_user.id == @accent.user.id
+    redirect_to action: :index unless user_signed_in? && (current_user.id == @accent.user.id || current_user.admin?)
   end
 end
