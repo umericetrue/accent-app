@@ -22,7 +22,7 @@
         <% if user_signed_in? && current_user.id == @accent.user_id %>
           <%= link_to "編集", edit_accent_path(@accent), class: "edit-btn" %>
         <% end %>
-        <% if current_user.admin? %>
+        <% if user_signed_in? && current_user.admin? %>
           <%= link_to "削除", accent_path(@accent), class: "delete-btn", method: :delete %>
         <% end %>
         <!--<span class="report-btn">通報</span>-->
