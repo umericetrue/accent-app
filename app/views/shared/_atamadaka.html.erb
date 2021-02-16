@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <% if current_user.already_atamadaka?(accent) %>
+     <%= link_to '頭高型', accent_atamadaka_path(accent), method: :delete %>
+  <% else %>
+    <%= link_to '頭高型', accent_atamadakas_path(accent), method: :post %>
+  <% end %>
+  <%= accent.atamadakas.count %>
+<% else %>
+  頭高型 <%= accent.atamadakas.count%>
+<% end %>
