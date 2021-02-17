@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <% if current_user.already_nakadaka?(accent) %>
+    <%= link_to '中高型', accent_nakadaka_path(accent), method: :delete %>
+  <% else %>
+    <%= link_to '中高型', accent_nakadakas_path(accent), method: :post %>
+  <% end %>
+    <%= accent.nakadakas.count %>
+<% else %>
+  中高型 <%= accent.nakadakas.count%>
+<% end %>
