@@ -79,7 +79,7 @@ RSpec.describe 'アクセント編集機能', type: :system do
       fill_in 'accent[word_kana]', with: "#{@accent1.word_kana}ヲヘンシュウシタタンゴフリガナ"
       select '動詞', from: 'accent[part_of_speech_id]'
       select '尾高型', from: 'accent[accent_pattern_id]'
-      select '3', from: 'accent[beat_count_id]'
+      select '3拍目', from: 'accent[beat_count_id]'
       fill_in 'accent[info]', with: "#{@accent1.info}+編集した情報源"
       # 編集してもAccentモデルのカウントは変わらないことを確認する
       expect  do
