@@ -10,7 +10,7 @@
       <div class="field">
         <div class="field-label">
           <%= f.label :nickname %>
-          <span class="indispensable">*</span>
+          <span class="indispensable">必須</span>
         </div>
         <div>
           <%= f.text_area :nickname, class: "field-input", placeholder: "（例）Accent太郎", autofocus: true, autocomplete: "off" %>
@@ -20,7 +20,7 @@
       <div class="field">
         <div class="field-label">
           <%= f.label :email %>
-          <span class="indispensable">*</span>
+          <span class="indispensable">必須</span>
         </div>
         <div>
           <%= f.email_field :email, class: "field-input", placeholder: "（例）sample@examle", autocomplete: "off" %>
@@ -33,7 +33,7 @@
           <% if @minimum_password_length %>
           <em>(半角<%= @minimum_password_length %> 文字以上)</em>
           <% end %>
-          <span class="indispensable">*</span>
+          <span class="indispensable">必須</span>
         </div>
         <div>
           <%= f.password_field :password, class: "field-input", autocomplete: "off" %>
@@ -43,7 +43,7 @@
       <div class="field">
         <div class="field-label">
           <%= f.label :password_confirmation %>
-          <span class="indispensable">*</span>
+          <span class="indispensable">必須</span>
         </div>
         <div>
           <%= f.password_field :password_confirmation, class: "field-input", autocomplete: "off" %>
