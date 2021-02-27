@@ -9,6 +9,7 @@ RSpec.describe 'アクセント登録機能', type: :system do
   end
   context 'アクセント登録ができるとき' do
     it 'ログインしたユーザーはアクセント新規登録できる' do
+      basic_pass root_path
       sign_in(@user)
       click_on('単語登録する')
       fill_in 'accent[word]', with: @accent.word
@@ -32,9 +33,9 @@ RSpec.describe 'アクセント登録機能', type: :system do
   end
   context 'アクセント登録ができないとき' do
     it 'ログインしていないとアクセント新規登録ページに遷移できない' do
-      visit root_path
+      basic_pass root_path
       click_on('単語登録する')
-      visit root_path
+      expect(current_path).to eq new_user_session_path
     end
   end
 end
@@ -46,6 +47,7 @@ RSpec.describe 'アクセント編集機能', type: :system do
   end
   context 'アクセント編集ができるとき' do
     it 'ログインしたユーザーは自分が登録した単語の編集ができる' do
+      basic_pass root_path
       sign_in(@accent1.user)
       click_on(@accent1.word)
       expect(current_path).to eq accent_path(@accent1)
@@ -98,6 +100,7 @@ RSpec.describe 'アクセント編集機能', type: :system do
 
   context 'アクセント編集ができないとき' do
     it 'ログインしたユーザーは自分以外が登録した単語の編集画面には遷移できない' do
+      basic_pass root_path
       sign_in(@accent1.user)
       click_on(@accent2.word)
       expect(current_path).to eq accent_path(@accent2)
@@ -105,7 +108,7 @@ RSpec.describe 'アクセント編集機能', type: :system do
       expect(page).to have_no_content('編集')
     end
     it 'ログインしていないと単語の編集画面には遷移できない' do
-      visit root_path
+      basic_pass root_path
       click_on(@accent1.word)
       expect(page).to have_no_content('編集')
     end
@@ -118,6 +121,7 @@ RSpec.describe 'アクセント詳細機能', type: :system do
     @accent2 = FactoryBot.create(:accent)
   end
   it 'ログインしたユーザーは自分が登録したアクセント詳細ページに遷移すると編集ボタンとコメント投稿欄が表示される' do
+    basic_pass root_path
     sign_in(@accent1.user)
     click_on(@accent1.word)
     expect(current_path).to eq accent_path(@accent1)
@@ -126,6 +130,7 @@ RSpec.describe 'アクセント詳細機能', type: :system do
     expect(page).to have_selector 'form'
   end
   it 'ログインしたユーザーは別のユーザーが登録したアクセント詳細ページに遷移するとコメント投稿欄は表示されるが編集ボタンは表示されない' do
+    basic_pass root_path
     sign_in(@accent1.user)
     click_on(@accent2.word)
     expect(current_path).to eq accent_path(@accent2)
@@ -135,7 +140,7 @@ RSpec.describe 'アクセント詳細機能', type: :system do
     expect(page).to have_no_content '編集'
   end
   it 'ログインしていない状態ではアクセント詳細ページに遷移できるもののコメント投稿欄は表示されない' do
-    visit root_path
+    basic_pass root_path
     click_on(@accent1.word)
     expect(current_path).to eq accent_path(@accent1)
     # 詳細ページが正しく表示されているかどうかはaccentsコントローラーの単体テストで確認済み
