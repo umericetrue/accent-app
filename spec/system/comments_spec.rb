@@ -8,6 +8,7 @@ RSpec.describe 'コメント投稿機能', type: :system do
   end
 
   it 'ログインしたユーザーはアクセント詳細ページでコメント投稿できる' do
+    basic_pass root_path
     sign_in(@user)
     visit accent_path(@accent)
     fill_in 'comment[comment]', with: @comment
