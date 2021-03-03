@@ -7,7 +7,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
   context 'ユーザー新規登録ができる時' do
     it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
       # トップページに移動する
-      visit root_path
+      basic_pass root_path
       # トップページにサインアップページへ遷移するボタンがあることを確認する
       expect(page).to have_content('新規登録')
       # 新規登録ページへ移動する
@@ -32,7 +32,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
 
   context 'ユーザー新規登録ができない時' do
     it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
-      visit root_path
+      basic_pass root_path
       expect(page).to have_content('新規登録')
       click_on('新規登録')
       expect(current_path).to eq new_user_registration_path
@@ -54,7 +54,7 @@ RSpec.describe 'ログイン', type: :system do
   end
   context 'ログインができる時' do
     it '保存されているユーザーの情報が合致すればログインができる' do
-      visit root_path
+      basic_pass root_path
       expect(page).to have_content('ログイン')
       click_on('ログイン')
       expect(current_path).to eq new_user_session_path
@@ -69,7 +69,7 @@ RSpec.describe 'ログイン', type: :system do
   end
   context 'ログインができない時' do
     it '保存されているユーザーの情報と合致しないとログインができない' do
-      visit root_path
+      basic_pass root_path
       expect(page).to have_content('ログイン')
       click_on('ログイン')
       expect(current_path).to eq new_user_session_path
