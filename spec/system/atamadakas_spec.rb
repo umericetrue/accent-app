@@ -17,4 +17,11 @@ RSpec.describe "頭高型投票機能(いいね機能)", type: :system do
       expect(current_path).to eq accent_path(@accent)
     end
   end
+  context '投票できない時' do
+    it 'ログインしていないユーザーはアクセント詳細ページで頭高型の投票機能を使うことができない' do
+      basic_pass root_path
+      visit accent_path(@accent)
+      expect(page).to have_no_link '頭高型'
+    end
+  end
 end
