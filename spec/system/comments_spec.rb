@@ -19,7 +19,7 @@ RSpec.describe 'コメント投稿機能', type: :system do
       expect(page).to have_content @comment
     end
   end
-  
+
   context 'コメント投稿できない時' do
     it 'ログインしていないユーザーはコメント投稿できない' do
       basic_pass root_path

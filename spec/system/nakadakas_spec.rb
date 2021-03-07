@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "中高型投票機能(いいね機能)", type: :system do
+RSpec.describe '中高型投票機能(いいね機能)', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @accent = FactoryBot.create(:accent)
@@ -11,9 +11,9 @@ RSpec.describe "中高型投票機能(いいね機能)", type: :system do
       basic_pass root_path
       sign_in(@user)
       visit accent_path(@accent)
-      expect {
+      expect do
         click_link '中高型'
-      }.to change { Nakadaka.count }.by(1)
+      end.to change { Nakadaka.count }.by(1)
       expect(current_path).to eq accent_path(@accent)
     end
   end
