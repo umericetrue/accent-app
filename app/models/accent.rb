@@ -25,7 +25,13 @@ class Accent < ApplicationRecord
     end
   end
 
+  validates :beat_count_id, numericality: { other_than: 1, message: 'を選択してください' }, if: :is_nakadaka?
+  
   def self.search(search)
     Accent.where('word LIKE(?)', "#{search}%") if search != ''
+  end
+
+  def is_nakadaka?
+    accent_pattern_id == '3'
   end
 end
