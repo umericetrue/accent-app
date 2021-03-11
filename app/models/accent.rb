@@ -11,6 +11,7 @@ class Accent < ApplicationRecord
   belongs_to :accent_pattern
   belongs_to :beat_count
 
+  # アクセント登録時のバリデーション
   with_options presence: true do
     validates :info, length: { maximum: 400 }
 
@@ -18,13 +19,13 @@ class Accent < ApplicationRecord
       validates :word, uniqueness: { case_sensitive: false }
       validates :word_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: 'は全角カタカナを入力してください' }
     end
-
-    with_options numericality: { other_than: 1, message: 'を選択してください' } do
-      validates :part_of_speech_id
-      validates :accent_pattern_id
-    end
   end
   
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
+    validates :part_of_speech_id
+    validates :accent_pattern_id
+  end
+
   def self.search(search)
     Accent.where('word LIKE(?)', "#{search}%") if search != ''
   end
