@@ -14,5 +14,5 @@ ja:
        word_kana: 単語（フリガナ）
        part_of_speech_id: 品詞
        accent_pattern_id: アクセントの型
-       
+       beat_count_id: 高さの切れ目の拍
        
