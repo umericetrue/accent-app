@@ -1,4 +1,5 @@
 class Accent < ApplicationRecord
+  # アソシエーション
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :atamadakas, dependent: :destroy
@@ -26,6 +27,7 @@ class Accent < ApplicationRecord
     validates :accent_pattern_id
   end
 
+  # searchアクションの定義
   def self.search(search)
     Accent.where('word LIKE(?)', "#{search}%") if search != ''
   end
