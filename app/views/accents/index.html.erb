@@ -1,5 +1,6 @@
 <%= render "shared/header" %>
 
+<%# 検索フォーム %>
 <div class="main-contents">
   <div class="search-contents">
     <h1 class="accent-search">アクセント検索</h1>
@@ -9,6 +10,7 @@
     <% end %>
   </div>
 
+  <%# 中央広告部分 %>
   <div class="app-intro">
     <div class="app-intro-left">
       <p class='service-explain'>
@@ -29,6 +31,7 @@
     </div>
   </div>
   
+  <%# 新着ワード %>
   <div class="bottom-contents">
     <div class="hot-word">
       <h1>新着ワード</h1>
@@ -40,6 +43,7 @@
     </div>
   </div>
   
+  <%# 単語登録ボタン %>
     <%= link_to(new_accent_path, class: 'subscribe-btn') do %>
       <span class='subscribe-btn-text'>単語登録する</span>
     <!-- <%= image_tag 'icon_subscribe.png' , size: '120x120' ,class: "subscribe-btn-icon" %>-->
